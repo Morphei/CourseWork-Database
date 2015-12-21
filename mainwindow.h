@@ -7,6 +7,7 @@
 #include <QMessageBox>
 
 #include "logindialog.h"
+#include "finddialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -29,12 +30,21 @@ private slots:
 
     void on_actionQuit_triggered();
 
+    void on_actionFind_in_products_triggered();
+
+    void on_actionFind_in_clients_triggered();
+
+    void on_actionFind_in_bills_triggered();
+
 private:
     QString* login, *pass;
 
     Ui::MainWindow *ui;
+    FindDialog* findForm;
+
     QSqlDatabase database;
     QSqlRelationalTableModel* model;
+    QLabel* statusBarLabel;
 
     void connectToDatabase();
     void addRecord();

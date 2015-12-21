@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
     login = new QString;
     pass = new QString;
 
@@ -14,13 +15,19 @@ MainWindow::MainWindow(QWidget *parent) :
     logDialog.setModal(true);
     logDialog.exec();
 
+
+
     if(logDialog.result())
         connectToDatabase();
     else exit(0);
 
     model = new QSqlRelationalTableModel(this, database);
     changeTable("product");
+    statusBarLabel = new QLabel;
+    statusBarLabel->setText("Changes saved");
+    ui->statusBar->addWidget(statusBarLabel);
 
+    findForm = new FindDialog(this, &database);
 }
 
 MainWindow::~MainWindow()
@@ -59,8 +66,8 @@ void MainWindow::addRecord()
 void MainWindow::saveChanges()
 {
     if(model->submitAll())
-        qDebug() << "good";
-    else qDebug() << "bad";
+        statusBarLabel->setText("Changes saved");
+    else statusBarLabel->setText("Incorrect input");
 }
 
 void MainWindow::changeTable(const QString table)
@@ -110,3 +117,24 @@ void MainWindow::on_actionQuit_triggered()
     exit(0);
 }
 
+
+void MainWindow::on_actionFind_in_products_triggered()
+{
+    findForm->setWindowTitle("Find in products");
+    findForm->setTable("product");
+    findForm->exec();
+}
+
+void MainWindow::on_actionFind_in_clients_triggered()
+{
+    findForm->setWindowTitle("Find in clients");
+    findForm->setTable("client");
+    findForm->exec();
+}
+
+void MainWindow::on_actionFind_in_bills_triggered()
+{
+    findForm->setWindowTitle("Find in bills");
+    findForm->setTable("bill");
+    findForm->exec();
+}

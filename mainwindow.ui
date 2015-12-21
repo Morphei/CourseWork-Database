@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>750</width>
-    <height>489</height>
+    <width>749</width>
+    <height>473</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Music Shop</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QWidget" name="verticalLayoutWidget">
@@ -20,7 +20,7 @@
       <x>9</x>
       <y>9</y>
       <width>731</width>
-      <height>271</height>
+      <height>361</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -33,7 +33,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>300</y>
+      <y>390</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -46,7 +46,7 @@
     <property name="geometry">
      <rect>
       <x>650</x>
-      <y>290</y>
+      <y>380</y>
       <width>86</width>
       <height>25</height>
      </rect>
@@ -86,7 +86,7 @@
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>300</y>
+      <y>390</y>
       <width>101</width>
       <height>25</height>
      </rect>
@@ -99,7 +99,7 @@
     <property name="geometry">
      <rect>
       <x>580</x>
-      <y>290</y>
+      <y>380</y>
       <width>67</width>
       <height>17</height>
      </rect>
@@ -114,7 +114,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>750</width>
+     <width>749</width>
      <height>22</height>
     </rect>
    </property>
@@ -128,6 +128,9 @@
     <property name="title">
      <string>Find</string>
     </property>
+    <addaction name="actionFind_in_products"/>
+    <addaction name="actionFind_in_clients"/>
+    <addaction name="actionFind_in_bills"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuFind"/>
@@ -147,9 +150,23 @@
     <string>Exit</string>
    </property>
   </action>
+  <action name="actionFind_in_products">
+   <property name="text">
+    <string>Find in products</string>
+   </property>
+  </action>
+  <action name="actionFind_in_clients">
+   <property name="text">
+    <string>Find in clients</string>
+   </property>
+  </action>
+  <action name="actionFind_in_bills">
+   <property name="text">
+    <string>Find in bills</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <pixmapfunction></pixmapfunction>
  <resources/>
  <connections/>
 </ui>
