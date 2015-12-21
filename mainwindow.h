@@ -8,7 +8,6 @@
 
 #include "logindialog.h"
 
-
 namespace Ui {
 class MainWindow;
 }

@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -21,12 +20,14 @@ MainWindow::MainWindow(QWidget *parent) :
 
     model = new QSqlRelationalTableModel(this, database);
     changeTable("product");
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+
 
 void MainWindow::connectToDatabase()
 {
@@ -108,3 +109,4 @@ void MainWindow::on_actionQuit_triggered()
 {
     exit(0);
 }
+
